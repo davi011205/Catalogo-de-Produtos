@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "nome": "Nubank",
+    "preco": 199.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "debito",
+    "hover": "Produto recomendado para compras maiores",
+    "imagem": "src/assets/imagens/nubank.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Inter",
+    "preco": 29.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito",
+    "hover": "Produto recomendado para compras menores",
+    "imagem": "src/assets/imagens/inter.png"
+  },
+  {
+    "id": 3,
+    "nome": "Porto Seguro",
+    "preco": 149.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito",
+    "hover": "Produto recomendado para compras internacionais",
+    "imagem": "src/assets/imagens/porto-seguro.jpg"
+  },
+  {
+    "id": 4,
+    "nome": "Banco do Brasil",
+    "preco": 39.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito",
+    "hover": "Produto recomendado para compras em instituições parceiras",
+    "imagem": "src/assets/imagens/banco-do-brasil.jpeg"
+  },
+  {
+    "id": 5,
+    "nome": "Mercado Pago",
+    "preco": 299.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito",
+    "hover": "Produto recomendado para compras ilegais",
+    "imagem": "src/assets/imagens/mercadopago.png"
+  },
+  {
+    "id": 6,
+    "nome": "Itaú",
+    "preco": 49.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "debito",
+    "hover": "Produto recomendado para compras com cash back",
+    "imagem": "src/assets/imagens/itau.png"
+  },
+  {
+    "id": 7,
+    "nome": "Picpay",
+    "preco": 49.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito/debito",
+    "hover": "Produto recomendado para compras de jogos online",
+    "imagem": "src/assets/imagens/picpay.jpg"
+  },
+  {
+    "id": 8,
+    "nome": "Neon",
+    "preco": 49.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito",
+    "hover": "Produto recomendado para compras de alimentos",
+    "imagem": "src/assets/imagens/neon.png"
+  },
+  {
+    "id": 9,
+    "nome": "Carrefour",
+    "preco": 49.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito",
+    "hover": "Produto recomendado para compras de bebidas",
+    "imagem": "src/assets/imagens/carrefour.png"
+  },
+  {
+    "id": 10,
+    "nome": "PAN",
+    "preco": 49.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito/debito",
+    "hover": "Produto recomendado para compras de eletronicos",
+    "imagem": "src/assets/imagens/pan.jpg"
+  },
+  {
+    "id": 11,
+    "nome": "AMEX",
+    "preco": 49.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "credito",
+    "hover": "Produto recomendado para compras utensílios domésticos",
+    "imagem": "src/assets/imagens/amex.jpg"
+  },
+  {
+    "id": 12,
+    "nome": "Santander",
+    "preco": 49.99,
+    "descricao": "descricao do produto x",
+    "avaliacao": "⭐⭐⭐",
+    "categoria": "debito",
+    "hover": "Produto recomendado para compras em artigos esportivos",
+    "imagem": "src/assets/imagens/santander.png"
+  }
+]
+
