@@ -1,0 +1,15 @@
+{
+  "name": "catalogo-de-produtos",
+  "version": "1.0.0",
+  "description": "Repositório criada para a entrega da atividade, realizado pelos alunos Davi Assunção dos Santos e Lucas Alexandre",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-modal": "^3.16.1"
+  }
+}
