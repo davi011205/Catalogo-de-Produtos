@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function CarrinhoDeCompra({ cartItems }) {
   const total = cartItems.reduce((acc, item) => acc + item.preco, 0);
@@ -9,7 +9,7 @@ function CarrinhoDeCompra({ cartItems }) {
       <ul>
         {cartItems.map((item) => (
           <li key={item.id}>
-            {item.id} - {item.nome} - ${item.preco}
+            {item.nome} - ${item.preco}
           </li>
         ))}
       </ul>

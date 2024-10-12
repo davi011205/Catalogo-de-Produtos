@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "catalogo-de-produtos": "file:",
     "react-modal": "^3.16.1"
   }
 }
