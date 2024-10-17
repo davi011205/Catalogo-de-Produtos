@@ -1,36 +1,63 @@
 import './App.css';
-import React, { useState } from 'react';
-import produtos from '../src/dados/produtos.json';
+import React, { useEffect, useState } from 'react';
+import { db } from './scripts/firebaseConfig'; // Importa a configuração do Firebase
+import { collection, getDocs } from 'firebase/firestore';
 import ListaProdutos from './componentes/ListaProdutos';
 import CarrinhoDeCompra from './componentes/CarrinhoDeCompra';
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [itensCarrinho, setItensCarrinho] = useState([]);
+  const [produtos, setProdutos] = useState([]);
+  const [selectedCategoria, setSelectedCategoria] = useState(null);
 
-  const handleCategoryFilterChange = (category) => {
-    setSelectedCategory(category);
+  useEffect(() => {
+    const fetchProdutos = async () => {
+      const produtosCollection = collection(db, 'produtos');
+      const produtosSnapshot = await getDocs(produtosCollection);
+      const produtosList = produtosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setProdutos(produtosList);
+    };
+
+    fetchProdutos();
+  }, []); // O array vazio significa que isso será executado apenas uma vez após o componente ser montado
+
+  const handleCategoriaFilterChange = (categoria) => {
+    setSelectedCategoria(categoria);
   };
 
-  const handleAddToCart = (product) => {
-    setCartItems([...cartItems, product]);
+  const handleAddToCart = (produto) => {
+    setItensCarrinho((prevItems) => {
+      const itemExistente = prevItems.find((item) => item.id === produto.id);
+
+      if (itemExistente) {
+        // Se o item já existe, atualiza a quantidade
+        return prevItems.map((item) =>
+          item.id === produto.id
+            ? { ...item, quantidade: (item.quantidade || 1) + 1 } // Se quantidade não existir, inicializa como 1
+            : item
+        );
+      } else {
+        // Se o item não existe, adiciona ao carrinho
+        return [...prevItems, { ...produto, quantidade: 1 }];
+      }
+    });
   };
 
-  const filteredProducts = selectedCategory
-    ? produtos.filter((produto) => produto.categoria === selectedCategory)
+  const filteredProdutos = selectedCategoria
+    ? produtos.filter((produto) => produto.categoria === selectedCategoria)
     : produtos;
 
   return (
     <div className="App">
-      <h1>Minha Loja de Produtos</h1>
+      <h1>Produtos a Pronta Entrega</h1>
       <div className="filter-buttons">
-        <button onClick={() => handleCategoryFilterChange(null)}>Todos</button>
-        <button onClick={() => handleCategoryFilterChange('credito')}>Crédito</button>
-        <button onClick={() => handleCategoryFilterChange('debito')}>Débito</button>
-        <button onClick={() => handleCategoryFilterChange('credito/debito')}>Crédito/Débito</button>
+        <button onClick={() => handleCategoriaFilterChange(null)}>Todos</button>
+        <button onClick={() => handleCategoriaFilterChange('teste')}>Crédito</button>
+        <button onClick={() => handleCategoriaFilterChange('teste2')}>Débito</button>
+        <button onClick={() => handleCategoriaFilterChange('credito/debito')}>Crédito/Débito</button>
       </div>
-      <ListaProdutos products={filteredProducts} onAddToCart={handleAddToCart} />
-      <CarrinhoDeCompra cartItems={cartItems} />
+      <ListaProdutos produtos={filteredProdutos} adicionarNoCarrinho={handleAddToCart} />
+      <CarrinhoDeCompra itensCarrinho={itensCarrinho} />
     </div>
   );
 }
